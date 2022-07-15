@@ -17,11 +17,11 @@ public class Principal {
     
     public static void main(String[] args) throws SQLException {
         Enlace c = new Enlace();
-        Ciudad ciudad = new Ciudad("Cuenca", 100123);
+        Ciudad ciudad = new Ciudad("Machala", 400121);
         c.insertarCiudad(ciudad);
         
-        for (int i = 0; i < c.obtenerDataCiudad().size(); i++) {
-            System.out.printf("%s", c.obtenerDataCiudad().get(i));
-        }
+//        for (int i = 0; i < c.obtenerDataCiudad().size(); i++) {
+//            System.out.printf("%s", c.obtenerDataCiudad().get(i));
+//        }
     }
 }
