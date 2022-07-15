@@ -6,6 +6,7 @@
 package paquete03;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 import paquete01.Enlace;
 import paquete02.Auto;
 
@@ -14,16 +15,23 @@ import paquete02.Auto;
  * @author reroes
  */
 public class Principal {
+
     public static void main(String[] args) throws SQLException {
+        int op;
+        Scanner sc = new Scanner(System.in);
         Enlace c = new Enlace();
         Auto a = new Auto();
-        a.establecerPlaca("LBNS0001");
-        a.establecerValorMatricula(200.2);
-        
-        c.insertarAuto(a);
-        
-        for (int i = 0; i < c.obtenerDataAuto().size(); i++) {
-            System.out.printf("%s\n", c.obtenerDataAuto().get(i));
-        }
+        do {
+            System.out.println("Ingrese placa del auto:");
+            String p = sc.nextLine();
+            System.out.println("Ingrese valor matricula:");
+            double v = sc.nextFloat();
+            a.establecerPlaca(p);
+            a.establecerValorMatricula(v);
+            c.insertarAuto(a);
+            System.out.println("Desea ingresar otro auto ?? SI[1]NO[0]");
+            op = sc.nextInt();
+        } while (op != 0);
+
     }
 }

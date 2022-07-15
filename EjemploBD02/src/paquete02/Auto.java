@@ -29,5 +29,8 @@ public class Auto {
         return valorMatricula;
     }
     
-    
+    public String toString(){
+        String cadena = String.format("%s %.2f\n",placa,valorMatricula);
+        return cadena;
+    }
 }
